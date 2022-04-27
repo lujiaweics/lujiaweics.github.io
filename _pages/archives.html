@@ -1,0 +1,147 @@
+---
+key: 2
+title: Archives
+permalink: /archives/
+excerpt: 博文
+image: pic06.jpg
+background-image: banner.jpg
+---
+
+{% if site.posts %}{%
+if site.tags.featured %}
+<hr style="margin:0 0 1em 0;" />
+<h4>Featured</h4>
+<ul class="post-list">{%
+	for post in site.categories.topics %}{%
+	if post.tags contains "featured" %}
+	<li class="2u 3u(large) 5u(medium) 11u(small)">
+		<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+			<div class="container">
+				<p class="post-title">{{ post.title }}</p>
+				<p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+				<p class="post-desc">{{ post.excerpt | strip_html | truncatewords: 12 }}</p>
+			</div>
+		</a>
+	</li>{%
+	endif %}{%
+	endfor %}
+</ul>{%
+endif %}
+<hr style="margin:1em 0 1em 0;" />
+
+<ul style="list-style-type: none;">{%
+	assign p = '9999'
+	%}{% for post in site.categories.topics
+	%}{% assign n = post.date | date: "%Y"
+	%}{% if n != p
+	%}{% assign p = n
+	%}
+	<br />
+	<h5>{{ n }}</h5>{%
+	endif %}
+	<li style="padding-bottom: 6px;"><code>[{{ post.date | date: "%d %b" }}]</code>&nbsp;
+		<a href="{{ post.url | prepend: site.baseurl }}" style="white-space: nowrap;"><b>{{ post.title }}</b></a>&nbsp;
+		{{ post.excerpt | strip_html | truncatewords: 12 }}
+	</li>{%
+	endfor
+	%}
+</ul>
+
+{% endif %}
+
+<div class="table-wrapper">
+	<table>
+		<thead>
+			<tr>
+				<th>Tag</th>
+				<th>Title</th>
+				<th>Time</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>面经</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/123094204"
+							target="_blank">小象优品凉经-图像算法实习生 </a></b></td>
+				<td>Feb. 23, 2022</td>
+			</tr>
+			<tr>
+				<td>面经</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/122721263"
+							target="_blank">PwC上海AC面经-助理软件工程师（英语） </a></b></td>
+				<td>Jan. 27, 2022</td>
+			</tr>
+			<tr>
+				<td>OS</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/113061581"
+							target="_blank">杭电操作系统实验一 Linux内核编译及添加系统调用 </a></b></td>
+				<td>Jan. 23, 2021</td>
+			</tr>
+			<tr>
+				<td>考研英语</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/111446384"
+							target="_blank">考研英语作文简析(for Candice) </a></b></td>
+				<td>Dec. 20, 2020</td>
+			</tr>
+			<tr>
+				<td>高等数学</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/109554875" target="_blank">Candice
+							和 Garvey 的考研数学备考资料 </a></b></td>
+				<td>Nov. 8, 2020</td>
+			</tr>
+			<tr>
+				<td>CS231n</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/107792305" target="_blank">(Spring
+							2019）Assignment 1 - Two-Layer Neural Network </a></b></td>
+				<td>Aug. 4, 2020</td>
+			</tr>
+			<tr>
+				<td>CS231n</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/107437518" target="_blank">(Spring
+							2019）Assignment 1 - SVM </a></b></td>
+				<td>Jul. 19, 2020</td>
+			</tr>
+			<tr>
+				<td>CS231n</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/107373390" target="_blank">(Spring
+							2019）Assignment 1 - Softmax </a></b></td>
+				<td>Jul. 17, 2020</td>
+			</tr>
+			<tr>
+				<td>Git</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/106010461"
+							target="_blank">Git常用操作（持续更新） </a></b></td>
+				<td>May. 9, 2020</td>
+			</tr>
+			<tr>
+				<td>CS231n</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/104419105" target="_blank">(Spring
+							2019) Assignment 1 - kNN </a></b></td>
+				<td>Feb. 22, 2020</td>
+			</tr>
+			<tr>
+				<td>PAT</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/104239857" target="_blank">PAT-A
+							1004 Counting Leaves </a></b></td>
+				<td>Feb. 22, 2020</td>
+			</tr>
+			<tr>
+				<td>ACM</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/89807395"
+							target="_blank">[NOIP2006] 金明的预算方案 </a></b></td>
+				<td>May. 4, 2019</td>
+			</tr>
+			<tr>
+				<td>ACM</td>
+				<td><b><a href="https://blog.csdn.net/weixin_43998885/article/details/89788627"
+							target="_blank">[BZOJ1055] [HAOI2008] [洛谷P4290] 玩具取名 </a></b></td>
+				<td>May. 3, 2019</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3"></td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
